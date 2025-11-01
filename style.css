@@ -1,0 +1,239 @@
+/* Configurações básicas */
+:root {
+    --cor-principal: #34495e; /* Azul Escuro */
+    --cor-secundaria: #f39c12; /* Laranja/Amarelo */
+    --cor-fundo: #ecf0f1; /* Cinza Claro */
+    --cor-texto: #2c3e50; /* Quase Preto */
+    --cor-sidebar: #34495e; /* Azul Escuro (Para o fundo da sidebar) */
+    --cor-texto-sidebar: #ecf0f1; /* Branco/Cinza Claro */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1080px; /* Largura máxima do currículo */
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* 1. CABEÇALHO */
+.header {
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.header h2 {
+    margin: 5px 0 0;
+    font-size: 1.2em;
+    color: var(--cor-secundaria);
+}
+
+/* 2. LAYOUT PRINCIPAL (SIDEBAR + CONTEÚDO) */
+.curriculo {
+    display: flex;
+    /* Para telas menores, você pode querer que a sidebar fique em cima */
+}
+
+/* 2.1 BARRA LATERAL (SIDEBAR) */
+.sidebar {
+    width: 35%; /* Ocupa 35% da largura */
+    background-color: var(--cor-sidebar);
+    color: var(--cor-texto-sidebar);
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.sidebar h3 {
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 5px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: var(--cor-secundaria);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul a:link,     /* Estado Padrão */
+.sidebar ul a:visited   /* Estado Visitado (EVITA O ROXO) */
+{
+    color: inherit; /* Faz o link usar a cor do pai (var(--cor-texto-sidebar)) */
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+/* Adiciona um pequeno efeito visual ao passar o mouse */
+.sidebar ul a:hover {
+    text-decoration: underline;
+    color: var(--cor-secundaria); /* Usa a cor de destaque ao passar o mouse */
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+/* Estilo para o ícone Unicode nos títulos da Sidebar */
+.icone-unicode {
+    margin-right: 10px;
+    color: var(--cor-secundaria);
+    font-size: 1.1em; /* Ajusta o tamanho do símbolo */
+}
+
+/* NOVO CSS ADICIONADO: Estilo para os ícones dos itens da lista na Sidebar */
+.item-icon-sidebar {
+    margin-right: 10px;
+    color: var(--cor-secundaria);
+    font-size: 1.0em;
+}
+/* FIM DO NOVO CSS ADICIONADO */
+
+.perfil img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 20px;
+    border: 5px solid var(--cor-secundaria);
+}
+
+/* 2.2 CONTEÚDO PRINCIPAL (MAIN-CONTENT) */
+.main-content {
+    width: 65%; /* Ocupa 65% da largura */
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.main-content h3 {
+    color: var(--cor-principal);
+    border-bottom: 2px solid var(--cor-principal);
+    padding-bottom: 5px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+/* NOVO CSS ADICIONADO: Estilo para o Resumo */
+.resumo p {
+    line-height: 1.6;
+    text-align: justify;
+}
+/* FIM DO NOVO CSS ADICIONADO */
+
+
+/* Estilo para itens de experiência/educação */
+.job-item, .education-item {
+    margin-bottom: 20px;
+    padding-left: 10px;
+    border-left: 3px solid var(--cor-secundaria); /* Linha vertical */
+}
+
+.job-item h4, .education-item h4 {
+    margin: 0 0 5px 0;
+    color: var(--cor-principal);
+    font-size: 1.1em;
+}
+
+.empresa-data, .instituicao-data {
+    font-style: italic;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    color: #7f8c8d; /* Cinza suave */
+}
+
+/* NOVO CSS ADICIONADO: Configurações de lista para Experiência e Certificações */
+.experiencia ul, .certificacoes ul {
+    list-style: none; /* Remove a bolinha padrão do ul */
+    padding-left: 0;
+}
+
+.experiencia li, .certificacoes li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+/* NOVO CSS ADICIONADO: Estilo para os ícones dos itens da lista no Conteúdo Principal */
+.item-icon {
+    margin-right: 10px;
+    color: var(--cor-secundaria);
+    font-size: 1.0em;
+}
+/* FIM DO NOVO CSS ADICIONADO */
+
+
+/* MEDIA QUERIES para responsividade */
+@media (max-width: 768px) {
+    .curriculo {
+        flex-direction: column; /* Coloca a sidebar e o conteúdo em coluna */
+    }
+
+    .sidebar, .main-content {
+        width: 100%; /* Ocupa a largura total */
+        padding: 20px;
+    }
+}
+
+/* ===== MENU DE ÍCONES ===== */
+.header {
+    position: relative; /* Permite posicionar o menu dentro do cabeçalho */
+}
+
+.menu-icones {
+    position: absolute;
+    right: 20px;
+    top: 65%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.menu-icones a {
+    font-size: 1.6em;
+    color: var(--cor-secundaria);
+    text-decoration: none;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.menu-icones a:hover {
+    transform: scale(1.2);
+    color: white;
+}
+
+/* ROLAGEM SUAVE */
+html {
+    scroll-behavior: smooth;
+}
+
+/* RESPONSIVO: menu em linha no celular */
+@media (max-width: 768px) {
+    .menu-icones {
+        position: static;
+        transform: none;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 15px;
+    }
+}
